@@ -1,0 +1,32 @@
+seed: 0
+
+dset: mnist
+t_row: 0.1
+t_col: 0.05
+
+multi_crop: 0
+
+num_classes: 10 # number of output classes discrete range [0,9]
+num_epochs: 800 # number of times which the entire dataset is passed throughout the model
+batch_size: 512 # the size of input data took for one iteration
+
+lr: 0.004 # 1 # size of step
+momentum: 0.9
+weight_decay: 1.0e-6 # weight decay
+final_lr: 4.0e-6
+warmup_epochs: 10
+start_warmup_value: 0.001
+
+backbone: 'resnet18'
+hidden_dim: [4096, 128]
+head_sizes: [10, 20, 40, 80]
+
+optimizer: adam
+lars: false
+
+train_interval: 5
+test_interval: 5
+save_interval: 100
+
+# if ablation study, then set early_stop to 300
+early_stop: 1000
